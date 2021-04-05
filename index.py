@@ -20,3 +20,10 @@ model = linear_model.LinearRegression()
 
 model.fit(diabetes_X_train, diabetes_Y_train)  # training model
 diabetes_Y_predicted = model.predict(diabetes_X_test)  # testing model
+
+print(mean_squared_error(diabetes_Y_test, diabetes_Y_predicted))
+print("Weights: ", model.coef_)
+print("Intercepts: ", model.intercept_)
+
+plt.scatter(diabetes_X_test, diabetes_Y_test)
+plt.show()
